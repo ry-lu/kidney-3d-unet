@@ -2,17 +2,15 @@ import numpy as np
 from torch.utils.data import Dataset
 import torch
 
-from utils import extract_3d_voxels_for_patches, extract_patch_from_voxel, filter_empty_patches_by_voxel
+from datasets.utils import extract_3d_voxels_for_patches, extract_patch_from_voxel, filter_empty_patches_by_voxel
 
 class ValidKidney3DDataset(Dataset):
-    def __init__(self, patches, masks,patch_size,stride_size,norm_params, transformations=None):
+    def __init__(self, patches, masks,patch_size,stride_size, transformations=None):
         self.patches = patches
         self.masks = masks
         self.patch_size = patch_size
         self.lowest_voxels = extract_3d_voxels_for_patches(patches, patch_size=patch_size, stride=stride_size)
         self.lowest_voxels = filter_empty_patches_by_voxel(self.lowest_voxels, masks, patch_size,threshold=0)
-        self.std = norm_params[0]
-        self.mean = norm_params[1]
         self.transformations = transformations
         
     def __len__(self):

@@ -9,9 +9,6 @@ scheduler: cosine
 num_warmup_steps: 0
 epochs: 2
 decoder_lr: 0.005
-betas: !!python/tuple
-- 0.9
-- 0.999
 batch_size: 4
 infer_batch_size: 4
 ckpt_name: unet3d-baseline

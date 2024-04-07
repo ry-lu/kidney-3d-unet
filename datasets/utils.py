@@ -3,7 +3,7 @@ import numpy as np
 
 def extract_3d_voxels_for_patches(image_3d, patch_size=(128, 128, 128), stride=(64, 64, 64)):
     """
-    Extracts patches in an image and returns a list of lowest voxels.
+    Extracts patches in a 3D image and returns a list of lowest voxels.
     """
     patches = []
 

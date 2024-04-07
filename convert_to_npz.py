@@ -6,8 +6,7 @@ import cv2
 import numpy as np
 
 data_dir = Path('./data/')
-patch_size = (128, 256, 256)
-stride_size = (128, 128, 128)
+
 
 def get_data(folder):
     kidney_paths =  sorted(folder.glob('*.tif'))
@@ -34,7 +33,6 @@ def save_kidney_patches(image_path, mask_path, kidney_name):
     volume = read_volume(image_path)
     mask = read_volume(mask_path,is_mask=True)
 
-    os.makedirs(data_dir / f'{kidney_name}_patches', exist_ok=True)
     file_path = os.path.join(data_dir / f'{kidney_name}_dense.npz')
     np.savez(file_path, volume=volume,mask=mask)
 
