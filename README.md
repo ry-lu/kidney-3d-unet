@@ -9,9 +9,9 @@ Python 3.12.2
 ```console
 > pip install -r requirements.txt
 ```
-# Dataset
+## Dataset
 Dataset was obtained from here [link](https://www.kaggle.com/competitions/blood-vessel-segmentation).
-For data access, please accept the organizer's TOS and download. 
+For data access, please accept the organizer's TOS and download.  
 
 Dataset was converted to npz format with 
 ```console
