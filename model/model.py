@@ -1,6 +1,5 @@
 
 # Adapted From First Stage RSNA 2022 Cervical Spine Fracture Detection Qishen Hai
-
 import math
 import torch
 import torch.nn as nn

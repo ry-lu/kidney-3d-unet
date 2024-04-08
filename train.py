@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader
 from torch.optim import AdamW
 import numpy as np
 
-from model import TimmSegModel, convert_3d
+from model.model import TimmSegModel, convert_3d
 from training_utils import AverageMeter, timeSince
 from datasets.augmentations import get_augmentation
 from datasets.train_dataset import TrainKidney3DDataset
